@@ -13,7 +13,7 @@ if [ -f /etc/os-release ]; then
 fi
 current_dir="$PWD"
 echo $DISTRO > .distro_zab.txt
-apt update; apt install sudo -y
+apt update; apt install sudo wget -y
 # CloudStack build will create *.deb packages
 bash /tmp/linux-on-ibm-z-scripts/CloudStack/${version}/build_cloudstack.sh -y
 tar cvfz cloudstack-${version}-linux-s390x.tar.gz *.deb
